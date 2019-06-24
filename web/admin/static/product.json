@@ -1,0 +1,26 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "image": "/static/images/main_logo.png",
+      "pname": "手机",
+      "marketPrice":"28.8",
+      "isHot":"1",
+      "onlinetime":"2020-10-01"
+    },
+    {
+      "image": "/static/images/main_logo.png",
+      "pname": "手机",
+      "marketPrice":"28.8",
+      "isHot":"1",
+      "onlinetime":"2020-10-01"
+    },
+    {
+      "image": "/static/images/main_logo.png",
+      "pname": "手机",
+      "marketPrice":"28.8",
+      "isHot":"1",
+      "onlinetime":"2020-10-01"
+    }
+  ]
+}

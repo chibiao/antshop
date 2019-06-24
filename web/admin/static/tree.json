@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "text": "系统管理",
+    "children": [
+      {
+        "id":2,
+        "text": "一级商品分类管理",
+        "url": "/categoryServlet?action=categoryIndex"
+      },
+      {
+        "id":3,
+        "text": "二级商品分类管理",
+        "url": "/secondCategoryServlet?action=secondCategoryIndex"
+      },
+      {
+        "id":4,
+        "text": "商品管理",
+        "url": "/productServlet?action=productIndex"
+      },
+      {
+        "id":5,
+        "text": "管理员管理",
+        "url": "/adminServlet?action=adminIndex"
+      },
+      {
+        "id":6,
+        "text": "用户管理",
+        "url": "/userServlet?action=userIndex"
+      }
+    ]
+  }
+]
