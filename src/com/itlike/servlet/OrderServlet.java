@@ -27,6 +27,10 @@ public class OrderServlet extends BaseServlet {
     private OrderService orderService = new OrderServiceImpl();
     private CartService cartService = new CartServiceImpl();
 
+    public String orderAdminIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        return "/admin/order.jsp";
+    }
+
     /*进入订单页前判断是否登录*/
     public void orderIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
@@ -45,13 +49,21 @@ public class OrderServlet extends BaseServlet {
     public String orderList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
         try {
-            List<Orders> orders=orderService.getOrderListByUser(user.getId());
-            request.setAttribute("orders",orders);
+            List<Orders> orders = orderService.getOrderListByUser(user.getId());
+            request.setAttribute("orders", orders);
             return "order.jsp";
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
+    }
+    public void orderAdminList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            List<Orders> orders=orderService.getAllOrders();
+            response.getWriter().print(JSON.toJSONString(orders));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void submitOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,7 +95,8 @@ public class OrderServlet extends BaseServlet {
             e.printStackTrace();
         }
     }
-    public String  updatePayState(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    public String updatePayState(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String orderId = request.getParameter("orderId");
         try {
             orderService.updatePayState(orderId);
@@ -93,15 +106,30 @@ public class OrderServlet extends BaseServlet {
         }
         return null;
     }
+    /*更新发货状态*/
+    public void updateSendState(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        AjaxRes ajaxRes = new AjaxRes();
+        String uuid = request.getParameter("uuid");
+        try {
+            orderService.updateSendState(uuid);
+            ajaxRes.setMsg("发货成功");
+            ajaxRes.setSuccess(true);
+            response.getWriter().print(JSON.toJSONString(ajaxRes));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void getMessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uuid = request.getParameter("uuid");
         try {
-            Orders orders=orderService.getMessage(uuid);
+            Orders orders = orderService.getMessage(uuid);
             response.getWriter().print(JSON.toJSONString(orders));
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     public void updateMessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         String uuid = request.getParameter("uuid");
@@ -109,7 +137,7 @@ public class OrderServlet extends BaseServlet {
         String phone = request.getParameter("phone");
         String addr = request.getParameter("addr");
         try {
-            orderService.updateMessage(uuid,name,phone,addr);
+            orderService.updateMessage(uuid, name, phone, addr);
             ajaxRes.setMsg("修改成功");
             ajaxRes.setSuccess(true);
         } catch (SQLException e) {

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Title</title>
-    <%@include file="/static/common/common.jsp" %>
+    <%@include file="./static/common/common.jsp" %>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/menu.js"></script>
 </head>
 <body>

@@ -16,4 +16,8 @@ public interface OrderService {
     Orders getMessage(String uuid)throws SQLException;
 
     void updateMessage(String uuid, String name, String phone, String addr)throws SQLException;
+
+    List<Orders> getAllOrders()throws SQLException;
+
+    void updateSendState(String uuid)throws SQLException;
 }

@@ -54,4 +54,16 @@ public class OrderDaoImpl implements OrderDao {
         String sql="update orders set name=?,phone=?,addr=? where uuid=?";
         qr.update(sql,name,phone,addr,uuid);
     }
+
+    @Override
+    public List<Orders> getAllOrders() throws SQLException {
+        String sql="select * from orders";
+        return qr.query(sql,new BeanListHandler<>(Orders.class));
+    }
+
+    @Override
+    public void updateSendState(String uuid) throws SQLException {
+        String sql ="update orders set sendState=true where uuid=?";
+        qr.update(sql,uuid);
+    }
 }

@@ -27,6 +27,11 @@
         "id":6,
         "text": "用户管理",
         "url": "/userServlet?action=userIndex"
+      },
+      {
+        "id":7,
+        "text": "订单管理",
+        "url": "/orderServlet?action=orderAdminIndex"
       }
     ]
   }

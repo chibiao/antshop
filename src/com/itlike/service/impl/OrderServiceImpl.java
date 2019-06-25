@@ -15,17 +15,18 @@ import java.util.List;
 
 public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao = new OrderDaoImpl();
-    private ProductDao productDao =new ProductDaoImpl();
+    private ProductDao productDao = new ProductDaoImpl();
+
     @Override
     public void addOrder(Orders order, User user) throws SQLException {
-        orderDao.addOrder(order,user);
+        orderDao.addOrder(order, user);
     }
 
     @Override
     public List<Orders> getOrderListByUser(Long id) throws SQLException {
-        List<Orders> orders=orderDao.getOrderListByUser(id);
+        List<Orders> orders = orderDao.getOrderListByUser(id);
         for (Orders order : orders) {
-            List<OrderItem> orderItemList=orderDao.getOrderItemByOrderId(order.getUuid());
+            List<OrderItem> orderItemList = orderDao.getOrderItemByOrderId(order.getUuid());
             for (OrderItem orderItem : orderItemList) {
                 Product product = productDao.selectProductById(orderItem.getProductId());
                 orderItem.setProduct(product);
@@ -47,6 +48,16 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void updateMessage(String uuid, String name, String phone, String addr) throws SQLException {
-        orderDao.updateMessage(uuid,name,phone,addr);
+        orderDao.updateMessage(uuid, name, phone, addr);
+    }
+
+    @Override
+    public List<Orders> getAllOrders() throws SQLException {
+        return orderDao.getAllOrders();
+    }
+
+    @Override
+    public void updateSendState(String uuid) throws SQLException {
+        orderDao.updateSendState(uuid);
     }
 }
