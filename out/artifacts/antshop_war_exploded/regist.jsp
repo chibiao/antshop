@@ -9,6 +9,8 @@
     <!--设置标签图标-->
     <link href="favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="style/footerStyle.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css">
+    <script src="${pageContext.request.contextPath}/layui/layui.all.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/jquery-1.11.0.js"></script>
 </head>
 <body>
@@ -35,15 +37,15 @@
                 </div>
                 <div>
                     <label>密码</label>
-                    <input id="pwd" type="text" placeholder="请输入密码.." name="password">
+                    <input id="pwd" type="password" placeholder="请输入密码.." name="password">
                 </div>
                 <div>
                     <label>确认密码</label>
-                    <input id="pwd2" type="text" placeholder="请再次输入密码...">
+                    <input id="pwd2" type="password" placeholder="请再次输入密码...">
                 </div>
                 <div>
                     <label>电话</label>
-                    <input type="text" placeholder="请输入电话..." name="phone">
+                    <input type="text" placeholder="请输入电话..." name="phone" id="phone">
                 </div>
                 <div class="check_box">
                     <label>验证码</label>
@@ -69,17 +71,22 @@
             var username =  document.getElementById("username");
             var pwd =  document.getElementById("pwd");
             var pwd2 =  document.getElementById("pwd2");
+            var phone = document.getElementById('phone').value;
             //2.判断输入的内容不能为空
             if(username.value==""){
-                alert("请输入用户名");
+                layer.alert("请输入用户名");
                 return;
             }
             if(pwd.value==""){
-                alert("请输入密码");
+                layer.alert("请输入密码");
                 return;
             }
             if(pwd2.value==""){
-                alert("请再次输入密码");
+                layer.alert("请再次输入密码");
+                return;
+            }
+            if(!(/^1[3456789]\d{9}$/.test(phone))){
+                layer.alert("手机号码有误，请重填");
                 return;
             }
 
@@ -91,14 +98,14 @@
                     data = $.parseJSON(data);
                     if (data.success){
                         /*跳转到首页*/
-                        alert(data.msg);
+                        layer.alert(data.msg);
                         window.location.href = "/login.jsp"
                     } else {
-                        alert(data.msg);
+                        layer.alert(data.msg);
                     }
                 });
             }else{
-                alert("两次输入的密码不一样");
+                layer.alert("两次输入的密码不一样");
             }
         }
 </script>

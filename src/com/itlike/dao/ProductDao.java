@@ -31,4 +31,6 @@ public interface ProductDao {
     List<Product> getProductByCart(List<Cart> carts) throws SQLException;
 
     List<Product> getProductByUid(Long id) throws SQLException;
+
+    List<Product> getHotProduct()throws SQLException;
 }

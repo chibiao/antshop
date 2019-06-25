@@ -66,6 +66,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getHotProduct() throws SQLException {
+        return productDao.getHotProduct();
+    }
+
+    @Override
     public PageListRes getProductList(QueryVo vo) throws SQLException {
         PageListRes pageListRes = new PageListRes();
         List<Product> products = productDao.getProductList(vo);

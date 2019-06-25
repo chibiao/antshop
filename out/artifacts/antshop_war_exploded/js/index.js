@@ -50,6 +50,24 @@ function async2(){
                         }
                         /**/
                     }
+                    $.ajax({
+                        url:"productServlet",
+                        data:{action:'getHotProduct'},
+                        dataType: 'json',
+                        success:function (vals) {
+                            console.log(vals);
+                            console.log(vals.length);
+                            if (vals) {
+                                for (var i = 0; i < vals.length; i++) {
+                                    /*取出每一个菜单 */
+                                    var val = vals[i];
+                                    $("#hot_goodsList").append('<li><a href="/productServlet?action=getProductdetail&id='+val.id+'"> <img src="/upload/image/'+val.image+'"> <p>'+val.name+'</p> <del>￥'+val.marketPrice+'</del> <br> <i class="yuan">￥</i> <span class="price">'+val.shopPrice+'</span> </a> </li>');
+                                }
+                            } else {
+                                alert("添加失败");
+                            }
+                        }
+                    })
                 } else {
                     alert("添加失败");
                 }

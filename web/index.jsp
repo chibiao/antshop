@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,70 +141,24 @@
 <div id="hot_goods">
     <h3 class="hot_goods_title">热卖商品</h3>
     <div class="hot_goods_body">
-        <ul>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods6.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods7.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods8.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods9.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods10.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods11.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods12.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods13.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <img src="images/goods/goods14.png" alt="">
-                    <p>小米（MI）小米净化器2智能家用卧室空气净化器除甲醛雾霾P</p>
-                    <i class="yuan">￥</i><span class="price">599</span>
-                </a>
-            </li>
+        <ul id="hot_goodsList">
+            <%--<c:if test="${empty products }">
+                没有商品
+            </c:if>
+            <c:if test="${!empty products }">
+                <c:forEach items="${products }" var="product">
+                    <li>
+                        <a href="/productServlet?action=getProductdetail&id=${product.id}">
+                            <img src="/upload/image/${product.image }" alt="">
+                            <p>${product.name }</p>
+                            <del>￥${product.marketPrice}</del>
+                            <br>
+                            <i class="yuan">￥</i>
+                            <span class="price">${product.shopPrice }</span>
+                        </a>
+                    </li>
+                </c:forEach>
+            </c:if>--%>
         </ul>
 
     </div>

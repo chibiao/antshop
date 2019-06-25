@@ -6,6 +6,8 @@
     <title>用户权限管理系统</title>
     <link href="./static/css/base.css" rel="stylesheet">
     <link href="./static/css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css">
+    <script src="${pageContext.request.contextPath}/layui/layui.all.js" charset="utf-8"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.11.0.js"></script>
     <script>
         $(function () {
@@ -20,7 +22,7 @@
                         /*跳转到首页*/
                         window.location.href = "/admin/index.jsp"
                     } else {
-                        alert(data.msg);
+                        layer.alert(data.msg);
                     }
                 });
             });

@@ -15,6 +15,7 @@ import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -37,6 +38,16 @@ public class ProductServlet extends BaseServlet {
             PageListRes pageListRes = productService.getProductList(vo);
             response.getWriter().print(JSON.toJSONString(pageListRes));
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /*获取热门商品*/
+    public void getHotProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 1.获取所有的参数
+        try {
+            List<Product> products=productService.getHotProduct();
+            response.getWriter().print(JSON.toJSONString(products));
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
