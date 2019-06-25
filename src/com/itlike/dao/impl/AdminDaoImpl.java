@@ -17,7 +17,7 @@ public class AdminDaoImpl implements AdminDao {
     @Override
     public List<Admin> adminList(QueryVo vo) throws SQLException {
         String sql = "select * from admin limit ?,?";
-        return qr.query(sql,new BeanListHandler<>(Admin.class),vo.getPage()-1,vo.getRows());
+        return qr.query(sql,new BeanListHandler<>(Admin.class),(vo.getPage() - 1)*vo.getRows(),vo.getRows());
     }
 
     @Override

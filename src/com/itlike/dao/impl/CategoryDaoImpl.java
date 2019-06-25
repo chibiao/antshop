@@ -18,7 +18,7 @@ public class CategoryDaoImpl implements CategoryDao {
     @Override
     public List<Category> selectAll(QueryVo vo) throws SQLException {
         String sql = "select * from category limit ?,?";
-        return qr.query(sql, new BeanListHandler<>(Category.class), vo.getPage() - 1, vo.getRows());
+        return qr.query(sql, new BeanListHandler<>(Category.class), (vo.getPage() - 1)*vo.getRows(), vo.getRows());
     }
 
     @Override

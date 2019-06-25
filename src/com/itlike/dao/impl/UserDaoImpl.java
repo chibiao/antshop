@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List<User> userList(QueryVo vo) throws SQLException {
         String sql="select * from user limit ?,?";
-        return qr.query(sql,new BeanListHandler<>(User.class),vo.getPage()-1,vo.getRows());
+        return qr.query(sql,new BeanListHandler<>(User.class),(vo.getPage() - 1)*vo.getRows(),vo.getRows());
     }
 
     @Override

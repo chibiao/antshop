@@ -24,7 +24,7 @@ public class SecondCategoryDaoImpl implements SecondCategoryDao {
     @Override
     public List<SecondCategory> selectAll(QueryVo vo) throws SQLException {
         String sql="select * from secondcategory limit ?,?";
-        List<SecondCategory> secondCategories = qr.query(sql, new BeanListHandler<>(SecondCategory.class), vo.getPage() - 1, vo.getRows());
+        List<SecondCategory> secondCategories = qr.query(sql, new BeanListHandler<>(SecondCategory.class), (vo.getPage() - 1)*vo.getRows(), vo.getRows());
         for (SecondCategory secondCategory : secondCategories) {
             String sql2="select * from category where id=?";
             secondCategory.setParent(qr.query(sql2,new BeanHandler<>(Category.class),secondCategory.getCid()));

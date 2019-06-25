@@ -23,14 +23,14 @@ public class ProductDaoImpl implements ProductDao {
         List<Product> productList = null;
         if(vo.getKeyword()!=null&&!"".equals(vo.getKeyword())){
             String sql ="select * from product where name like ? limit ?,?";
-            productList = qr.query(sql, new BeanListHandler<>(Product.class),"%"+vo.getKeyword()+"%", vo.getPage() - 1, vo.getRows());
+            productList = qr.query(sql, new BeanListHandler<>(Product.class),"%"+vo.getKeyword()+"%", (vo.getPage() - 1)*vo.getRows(), vo.getRows());
             for (Product product : productList) {
                 String sql2="select * from secondcategory where id=?";
                 product.setSecondCategory(qr.query(sql2,new BeanHandler<>(SecondCategory.class),product.getScid()));
             }
         }else {
             String sql = "select * from product limit ?,?";
-            productList = qr.query(sql, new BeanListHandler<>(Product.class), vo.getPage() - 1, vo.getRows());
+            productList = qr.query(sql, new BeanListHandler<>(Product.class), (vo.getPage() - 1)*vo.getRows(), vo.getRows());
             for (Product product : productList) {
                 String sql2="select * from secondcategory where id=?";
                 product.setSecondCategory(qr.query(sql2,new BeanHandler<>(SecondCategory.class),product.getScid()));
