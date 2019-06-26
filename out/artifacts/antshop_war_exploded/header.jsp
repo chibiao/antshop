@@ -11,7 +11,9 @@
     <!--设置标签图标-->
     <link href="favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="style/footerStyle.css">
+    <link rel="stylesheet" href="./layui/css/layui.css">
     <script src="js/jquery-1.11.0.js"></script>
+    <script src="layui/layui.all.js" charset="utf-8"></script>
 </head>
 <body>
 <!--头部-->
@@ -80,6 +82,7 @@
                 data:{action:'orderIndex'},
                 success:function (data) {
                     var data=$.parseJSON(data);
+                    console.log(data);
                     if(data.success){
                         window.location.href="/orderServlet?action=orderList"
                     }else {

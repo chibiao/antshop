@@ -23,7 +23,7 @@
             <h3>欢迎注册</h3>
 
             <div class="reg_h_right">
-                <span>已有账户</span><a href="login.html">请登录</a>
+                <span>已有账户</span><a href="login.jsp">请登录</a>
             </div>
     </div>
 </div>

@@ -147,7 +147,7 @@
     <div class="login_center">
         <!--登录背景-->
         <div class="login_bg">
-            <h4>忘记密码</h4>
+            <h4>请登录</h4>
             <form action="${pageContext.request.contextPath}/loginServlet?action=login"  id="login" method="post">
                 <!--用户名-->
                <div class="username">
@@ -164,7 +164,7 @@
                 </div>
             </form>
             <div class="forgotPwd"><!--忘记密码-->
-                <a href="">忘记密码</a> <a href="">忘记会员名</a> <a href="">免费注册</a>
+                <a href="">忘记密码</a> <a href="">忘记会员名</a> <a href="regist.jsp">免费注册</a>
             </div>
         </div>
     </div>
