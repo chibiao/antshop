@@ -37,6 +37,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void updateUState(String username) throws SQLException {
+        userDao.updateUState(username);
+    }
+
+    @Override
     public PageListRes userList(QueryVo vo) throws SQLException {
         PageListRes pageListRes = new PageListRes();
         List<User> users=userDao.userList(vo);

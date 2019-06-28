@@ -34,6 +34,10 @@
                 <td>管理员密码</td>
                 <td><input type="text" name="password"></td>
             </tr>
+            <tr>
+                <td>角色:</td>
+                <td><input id="role" name="role.rid" placeholder="请选择角色"/></td>
+            </tr>
         </table>
     </form>
 </div>

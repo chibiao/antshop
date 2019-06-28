@@ -27,20 +27,28 @@ public class CategoryServlet extends BaseServlet {
     public String categoryIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         return "/admin/category.jsp";
     }
-
+    /*
+    *获取所有商品列表
+    * 根据分页
+    * 还有模糊查询
+    * */
     public void categoryList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 1.获取所有的参数
+        /*获取前端发送的所有数据  封装成一个map集合*/
         Map<String, String[]> parameterMap = request.getParameterMap();
         QueryVo vo = new QueryVo();
         try {
+            /*通过map集合中的参数  封装成对象*/
             BeanUtils.populate(vo, parameterMap);
+            /*返回查询出来的总数量和查询分页的数据条数
+            * */
             PageListRes pageListRes = categoryService.getCategoryList(vo);
             response.getWriter().print(JSON.toJSONString(pageListRes));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    /*查询所有*/
     public void allCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Category> categories = null;
         try {
@@ -61,16 +69,19 @@ public class CategoryServlet extends BaseServlet {
             e.printStackTrace();
         }
     }
-
+    /*更新一级分类的信息*/
     public void updateCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         Category category = new Category();
+        /*获取所有参数*/
         Map<String, String[]> parameterMap = request.getParameterMap();
         try {
+            /*根据参数  封装成category对象*/
             BeanUtils.populate(category, parameterMap);
             categoryService.updateCategory(category);
             ajaxRes.setSuccess(true);
             ajaxRes.setMsg("修改成功");
+            /*返回ajax的响应结果*/
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         } catch (Exception e) {
             ajaxRes.setSuccess(false);
@@ -78,7 +89,7 @@ public class CategoryServlet extends BaseServlet {
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         }
     }
-
+    /*添加一级分类*/
     public void addCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         Category category = new Category();
@@ -95,11 +106,12 @@ public class CategoryServlet extends BaseServlet {
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         }
     }
-
+    /*删除一级分类*/
     public void deleteCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         String id = request.getParameter("id");
         try {
+            /*根据id删除一级分类   如果下面有二级分类  无法删除  没有做级联删除*/
             categoryService.deleteCategory(Integer.parseInt(id));
             ajaxRes.setSuccess(true);
             ajaxRes.setMsg("删除成功");

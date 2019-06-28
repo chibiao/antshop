@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style/headerStyle.css">
     <!--设置标签图标-->
     <link href="favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="style/footerStyle.css">
     <link rel="stylesheet" href="style/detail.css">
-	<link rel="stylesheet" href="style/footerStyle.css">
     <link rel="stylesheet" href="./layui/css/layui.css">
     <script src="js/jquery-1.11.0.js"></script>
     <script src="layui/layui.all.js" charset="utf-8"></script>
@@ -18,7 +18,7 @@
 	<script>
 	function add(index){
 	    document.getElementById(index+'num').value = document.getElementById(index+'num').value*1+1;
-	     
+
 	  }
 	function minx(index){
         if(document.getElementById(index+'num').value>1){
@@ -27,7 +27,7 @@
 	  }
 	</script>
 </head>
-<body>
+<body style="background-color: white">
 <!-- 通过jsp指令导入头部 -->
 <%@include file="header.jsp" %>
 

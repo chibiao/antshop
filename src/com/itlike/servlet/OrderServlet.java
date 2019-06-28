@@ -45,7 +45,7 @@ public class OrderServlet extends BaseServlet {
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         }
     }
-
+    /*获取当前用户的订单列表*/
     public String orderList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
         try {
@@ -57,6 +57,7 @@ public class OrderServlet extends BaseServlet {
         }
         return null;
     }
+    /*后台管理系统获取所有的订单页*/
     public void orderAdminList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             List<Orders> orders=orderService.getAllOrders();
@@ -65,7 +66,7 @@ public class OrderServlet extends BaseServlet {
             e.printStackTrace();
         }
     }
-
+    /*提交订单*/
     public void submitOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         String orders = request.getParameter("orders");
@@ -95,7 +96,7 @@ public class OrderServlet extends BaseServlet {
             e.printStackTrace();
         }
     }
-
+    /*更新付款的状态*/
     public String updatePayState(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String orderId = request.getParameter("orderId");
         try {
@@ -119,7 +120,8 @@ public class OrderServlet extends BaseServlet {
             e.printStackTrace();
         }
     }
-
+    /*获取发货的地址和信息
+    * */
     public void getMessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uuid = request.getParameter("uuid");
         try {
@@ -129,7 +131,8 @@ public class OrderServlet extends BaseServlet {
             e.printStackTrace();
         }
     }
-
+    /*修改发货的地址等信息
+    * */
     public void updateMessage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         String uuid = request.getParameter("uuid");

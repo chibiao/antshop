@@ -8,12 +8,25 @@
     <meta charset="UTF-8">
     <title>码蚁商城结算</title>
     <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/regStyle.css">
+    <link rel="stylesheet" href="style/footerStyle.css">
     <script src="js/jquery-1.11.0.js"></script>
     <script src="layui/layui.js" charset="utf-8"></script>
     <script src="js/header.js"></script>
 </head>
 <body>
-<%@include file="header.jsp" %>
+<div id="reg_header">
+    <div class="reg_h_center">
+
+        <img src="images/logo.png" alt="">
+        <h3>我的订单</h3>
+
+        <div class="reg_h_right">
+            <span>继续购物</span><a href="index.jsp">返回首页</a>
+        </div>
+    </div>
+</div>
 <c:forEach items="${orders }" var="order">
     <div class="layui-form" style="width: 1200px;margin:0 auto">
         <table class="layui-table" lay-skin="line">

@@ -56,7 +56,7 @@ new Vue({
                        success:function (data) {
                            if (data.success){
                                alert("提交成功");
-                               window.location.href = "index.jsp";
+                               window.location.href = "/orderServlet?action=orderList";
                            }
                        },
                        dataType: 'json'

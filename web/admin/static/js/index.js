@@ -3,7 +3,7 @@ $(function () {
         fit:true
     });
     $('#tree').tree({
-        url:'/admin/static/tree.json',
+        url:'/menuServlet?action=getTreeData',
         lines:true,
         onSelect: function(node){
             /*在添加之前, 做判断  判断这个标签是否存在 */

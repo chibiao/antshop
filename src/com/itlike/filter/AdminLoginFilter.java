@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
-
+/*后台登录过滤器*/
 @WebFilter(urlPatterns = "/admin/*", initParams = { @WebInitParam(name = "EXCLUDED_PAGES", value = "admin/login.jsp") })
 public class AdminLoginFilter implements Filter {
     private String excludedPages;

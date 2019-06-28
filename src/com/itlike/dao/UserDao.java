@@ -18,4 +18,6 @@ public interface UserDao {
     void updateUserState(int id)throws SQLException;
 
     User getUserByUsername(String username)throws SQLException;
+    /*更新用户状态*/
+    void updateUState(String username)throws SQLException;
 }

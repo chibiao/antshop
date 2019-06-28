@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Title</title>
@@ -11,9 +12,21 @@
 </head>
 <body>
 <div id="tb">
-    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" id="add">添加</a>
-    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" id="edit">编辑</a>
-    <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" id="del">下架</a>
+    <c:forEach items="${admin.permissions}" var="permission">
+        <c:if test="${permission.presource=='product:add' }">
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true" id="add">添加</a>
+        </c:if>
+    </c:forEach>
+    <c:forEach items="${admin.permissions}" var="permission">
+        <c:if test="${permission.presource=='product:edit' }">
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit',plain:true" id="edit">编辑</a>
+        </c:if>
+    </c:forEach>
+    <c:forEach items="${admin.permissions}" var="permission">
+        <c:if test="${permission.presource=='product:delete' }">
+            <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" id="del">下架</a>
+        </c:if>
+    </c:forEach>
     <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-reload',plain:true" id="reload">刷新</a>
     <input type="text" name="keyword" style="width: 200px; height: 30px;padding-left: 5px;">
     <a class="easyui-linkbutton" iconCls="icon-search" id="searchbtn">查询</a>

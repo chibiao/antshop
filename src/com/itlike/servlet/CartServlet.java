@@ -28,6 +28,8 @@ public class CartServlet extends BaseServlet {
     public void getCartList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        /*判断是否登录  如果未登录就从session中获取购物车数据*/
+        /*如果登录了  就从数据库中获取购物车数据*/
         if (user != null) {
             try {
                 List<Product> products = productService.getProductByUid(user.getId());
@@ -132,11 +134,14 @@ public class CartServlet extends BaseServlet {
         }
         response.getWriter().print(JSON.toJSONString(ajaxRes));
     }
-
+    /*删除购物车中的商品*/
     public void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
+        /*登录的用户就从数据库中删除对应的商品数据
+        * 未登录的用户就从session中删除对应的商品数据
+        * */
         if(user!=null){
             try {
                 cartService.deleteCart(user.getId(),Long.parseLong(id));

@@ -108,7 +108,7 @@
     background: red;
     font-weight:bold;
 }
-#reg_main input[type=button]:hover{s
+#reg_main input[type=button]:hover{
     cursor: pointer;
 }
 #reg_main .main_right{

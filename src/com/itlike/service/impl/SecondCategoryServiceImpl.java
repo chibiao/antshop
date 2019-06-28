@@ -41,4 +41,12 @@ public class SecondCategoryServiceImpl implements SecondCategoryService {
     public List<SecondCategory> AllSecondCategory() throws SQLException {
         return secondCategoryDao.AllSecondCategory();
     }
+
+    @Override
+    public void deleteSecondCategory(int id) throws SQLException {
+        /*打破关系*/
+        secondCategoryDao.delSecondCateoryAndProductRel(id);
+        /*删除二级菜单*/
+        secondCategoryDao.deleteSecondCateory(id);
+    }
 }

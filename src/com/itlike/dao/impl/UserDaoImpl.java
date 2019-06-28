@@ -1,7 +1,9 @@
 package com.itlike.dao.impl;
 
 import com.itlike.dao.UserDao;
+import com.itlike.domain.Product;
 import com.itlike.domain.QueryVo;
+import com.itlike.domain.SecondCategory;
 import com.itlike.domain.User;
 import com.itlike.util.JDBCUtil;
 import org.apache.commons.dbutils.QueryRunner;
@@ -22,8 +24,13 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> userList(QueryVo vo) throws SQLException {
-        String sql="select * from user limit ?,?";
-        return qr.query(sql,new BeanListHandler<>(User.class),(vo.getPage() - 1)*vo.getRows(),vo.getRows());
+        if(vo.getKeyword()!=null&&!"".equals(vo.getKeyword())){
+            String sql ="select * from user where name like ? limit ?,?";
+            return qr.query(sql,new BeanListHandler<>(User.class),"%"+vo.getKeyword()+"%",(vo.getPage() - 1)*vo.getRows(),vo.getRows());
+        }else {
+            String sql="select * from user limit ?,?";
+            return qr.query(sql,new BeanListHandler<>(User.class),(vo.getPage() - 1)*vo.getRows(),vo.getRows());
+        }
     }
 
     @Override
@@ -48,5 +55,11 @@ public class UserDaoImpl implements UserDao {
     public User getUserByUsername(String username) throws SQLException {
         String sql="select * from user where username=?";
         return qr.query(sql,new BeanHandler<>(User.class),username);
+    }
+
+    @Override
+    public void updateUState(String username) throws SQLException {
+        String sql ="update user set state=true where username=?";
+        qr.update(sql,username);
     }
 }

@@ -15,4 +15,6 @@ public interface SecondCategoryService {
     void addSecondCategory(SecondCategory secondCategory)throws SQLException;
 
     List<SecondCategory> AllSecondCategory()throws SQLException;
+
+    void deleteSecondCategory(int id)throws SQLException;
 }

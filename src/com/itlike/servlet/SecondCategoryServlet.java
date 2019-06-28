@@ -62,6 +62,7 @@ public class SecondCategoryServlet extends BaseServlet {
             ajaxRes.setMsg("修改成功");
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         } catch (Exception e) {
+            e.printStackTrace();
             ajaxRes.setSuccess(false);
             ajaxRes.setMsg("修改失败");
             response.getWriter().print(JSON.toJSONString(ajaxRes));
@@ -81,6 +82,22 @@ public class SecondCategoryServlet extends BaseServlet {
         } catch (Exception e) {
             ajaxRes.setSuccess(false);
             ajaxRes.setMsg("添加失败");
+            response.getWriter().print(JSON.toJSONString(ajaxRes));
+        }
+    }
+    public void deleteSecondCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        AjaxRes ajaxRes = new AjaxRes();
+        String id = request.getParameter("id");
+        System.out.println("deleteSecondCategory");
+        try {
+            secondCategoryService.deleteSecondCategory(Integer.parseInt(id));
+            ajaxRes.setSuccess(true);
+            ajaxRes.setMsg("删除成功");
+            response.getWriter().print(JSON.toJSONString(ajaxRes));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            ajaxRes.setSuccess(false);
+            ajaxRes.setMsg("删除失败");
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         }
     }

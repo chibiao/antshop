@@ -47,6 +47,10 @@
                     <label>电话</label>
                     <input type="text" placeholder="请输入电话..." name="phone" id="phone">
                 </div>
+                <div>
+                    <label>电子邮箱</label>
+                    <input type="text" placeholder="请输入电话..." name="email" id="email">
+                </div>
                 <div class="check_box">
                     <label>验证码</label>
                     <input type="text" placeholder="请输入验证码..." name="code">
@@ -72,6 +76,8 @@
             var pwd =  document.getElementById("pwd");
             var pwd2 =  document.getElementById("pwd2");
             var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
             //2.判断输入的内容不能为空
             if(username.value==""){
                 layer.alert("请输入用户名");
@@ -89,6 +95,13 @@
                 layer.alert("手机号码有误，请重填");
                 return;
             }
+            if(email.value === ""){ //输入不能为空
+                layer.alert("输入不能为空!");
+                return;
+            }else if(!reg.test(email)){ //正则验证不通过，格式不对
+                layer.alert("请输入正确的邮箱!");
+                return;
+            }
 
             //3。两次密码是否一样
             if(pwd.value == pwd2.value){
@@ -98,7 +111,7 @@
                     data = $.parseJSON(data);
                     if (data.success){
                         /*跳转到首页*/
-                        layer.alert(data.msg);
+                        alert(data.msg);
                         window.location.href = "/login.jsp"
                     } else {
                         layer.alert(data.msg);

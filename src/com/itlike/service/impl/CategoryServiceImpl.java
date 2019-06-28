@@ -14,12 +14,12 @@ import java.util.List;
 public class CategoryServiceImpl implements CategoryService {
     private CategoryDao categoryDao = new CategoryDaoImpl();
     private AjaxRes ajaxRes = new AjaxRes();
-
+    /*获取总记录数*/
     @Override
     public Long getCount() throws SQLException {
         return categoryDao.getCount();
     }
-
+    /*更新一级菜单*/
     @Override
     public void updateCategory(Category category) throws SQLException {
         categoryDao.updateCategory(category);
@@ -46,6 +46,12 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryDao.getAllCategoryList();
     }
 
+    /**
+     * 获取一级分类列表  分页查询
+     * @param vo 分页
+     * @return 分类条数和分类列表
+     * @throws SQLException
+     */
     @Override
     public PageListRes getCategoryList(QueryVo vo) throws SQLException {
         PageListRes pageListRes = new PageListRes();

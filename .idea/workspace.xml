@@ -7,10 +7,118 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74a197d5-fe20-4e9d-b171-c743d1e05200" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/dao/MenuDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/dao/PermissionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/dao/RoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/dao/impl/MenuDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/dao/impl/PermissionDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/dao/impl/RoleDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/domain/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/domain/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/service/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/service/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/PermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/SendEmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/servlet/MenuServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/servlet/PermissionServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/servlet/RoleServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/itlike/test/MailTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/junit-4.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/querendd.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/userdetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/antshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/antshop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/dao/AdminDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/dao/impl/AdminDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/dao/impl/AdminDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/domain/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/domain/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/impl/AdminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/impl/CartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/impl/CartServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/AdminLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/AdminLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/RegistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/RegistServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/WEB-INF/classes/com/itlike/servlet/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/role.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/role.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/static/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/static/js/role.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/admin/static/js/role.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/js/shopCartloop.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/js/shopCartloop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/order.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/regist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/regist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/style/regStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/antshop_war_exploded/style/regStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/dao/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/dao/AdminDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/dao/impl/AdminDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/dao/impl/AdminDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/dao/impl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/dao/impl/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/domain/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/domain/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/impl/AdminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/impl/CartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/impl/CartServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/servlet/AdminLoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/servlet/AdminLoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/servlet/AdminServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/servlet/AdminServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/servlet/LoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/servlet/RegistServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/antshop/com/itlike/servlet/RegistServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/antshop/com/itlike/servlet/UserServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/dao/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/dao/AdminDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/dao/SecondCategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/dao/SecondCategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/dao/impl/AdminDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/dao/impl/AdminDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/dao/impl/SecondCategoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/dao/impl/SecondCategoryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/domain/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/domain/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/domain/AjaxRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/domain/AjaxRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/domain/PageListRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/domain/PageListRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/domain/QueryVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/domain/QueryVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/filter/AdminLoginFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/filter/AdminLoginFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/SecondCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/SecondCategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/impl/SecondCategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/SecondCategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/AdminLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/AdminLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/AdminServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/AdminServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/CartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/CategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/CategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/OrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/RegistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/RegistServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/SecondCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/SecondCategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/itlike/servlet/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/itlike/servlet/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/role.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/role.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/static/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/static/js/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/static/js/role.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/static/js/role.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/admin/static/js/secondcategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/admin/static/js/secondcategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/shopCartloop.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/shopCartloop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/order.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/order.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/regist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/regist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/style/regStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/style/regStyle.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,33 +127,49 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1565759539">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.331" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="CSS" value="8" />
-          <entry key="HTML" value="4" />
+          <entry key="CLASS" value="2" />
+          <entry key="CSS" value="17" />
+          <entry key="HTML" value="5" />
+          <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="4" />
-          <entry key="JAVA" value="516" />
-          <entry key="JSON" value="21" />
-          <entry key="JSP" value="195" />
-          <entry key="JavaScript" value="111" />
+          <entry key="JAVA" value="807" />
+          <entry key="JSON" value="24" />
+          <entry key="JSP" value="229" />
+          <entry key="JavaScript" value="133" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
           <entry key="RNG Compact" value="1" />
@@ -55,12 +179,12 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="9" />
-          <entry key="JAVA" value="14206" />
+          <entry key="HTML" value="56" />
+          <entry key="JAVA" value="20783" />
           <entry key="JSON" value="123" />
-          <entry key="JSP" value="4316" />
-          <entry key="JavaScript" value="1873" />
-          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="JSP" value="5248" />
+          <entry key="JavaScript" value="2192" />
+          <entry key="PLAIN_TEXT" value="23" />
           <entry key="Properties" value="10" />
           <entry key="XML" value="131" />
         </counts>
@@ -70,40 +194,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/header.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/AdminDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+            <state relative-caret-position="-993">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/CartDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/CategoryDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/MenuDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/OrderDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/PermissionDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/login.jsp">
+        <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/RoleDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="149" column="19" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/regist.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/OrderServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="108">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -114,10 +262,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Jsp File" />
         <option value="Interface" />
         <option value="Class" />
         <option value="HTML File" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -133,57 +281,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/CategoryServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/CategoryDao.java" />
-        <option value="$PROJECT_DIR$/web/js/index.jsp.js" />
-        <option value="$PROJECT_DIR$/web/js/header.js" />
-        <option value="$PROJECT_DIR$/web/product.jsp" />
-        <option value="$PROJECT_DIR$/src/com/itlike/servlet/UserServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/domain/CartProduct.java" />
-        <option value="$PROJECT_DIR$/web/cart.jsp" />
-        <option value="$PROJECT_DIR$/web/data/cart.json" />
-        <option value="$PROJECT_DIR$/src/com/itlike/domain/Cart.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/service/CartService.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/servlet/CartServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/CartDao.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/CartDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/CartServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/domain/Order.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/domain/Orders.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/domain/OrderItem.java" />
-        <option value="$PROJECT_DIR$/web/index.html" />
-        <option value="$PROJECT_DIR$/web/updateOrder.jsp" />
-        <option value="$PROJECT_DIR$/web/order.jsp" />
-        <option value="$PROJECT_DIR$/src/com/itlike/servlet/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/web/detail.jsp" />
-        <option value="$PROJECT_DIR$/web/shopCart.jsp" />
-        <option value="$PROJECT_DIR$/web/js/shopCartloop.js" />
-        <option value="$PROJECT_DIR$/web/admin/static/tree.json" />
-        <option value="$PROJECT_DIR$/web/admin/product.jsp" />
-        <option value="$PROJECT_DIR$/web/admin/menu.jsp" />
-        <option value="$PROJECT_DIR$/web/admin/order.jsp" />
-        <option value="$PROJECT_DIR$/web/admin/static/js/order.js" />
-        <option value="$PROJECT_DIR$/src/com/itlike/service/OrderService.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/OrderDao.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/OrderDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/servlet/OrderServlet.java" />
-        <option value="$PROJECT_DIR$/web/admin/login.jsp" />
-        <option value="$PROJECT_DIR$/src/com/itlike/service/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/ProductDao.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/js/index.js" />
-        <option value="$PROJECT_DIR$/src/com/itlike/servlet/ProductServlet.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/ProductDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/CategoryDaoImpl.java" />
+        <option value="$PROJECT_DIR$/web/admin/role.jsp" />
+        <option value="$PROJECT_DIR$/web/admin/static/js/role.js" />
+        <option value="$PROJECT_DIR$/web/admin/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/RoleDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/dao/RoleDao.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/RoleService.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/RoleServlet.java" />
+        <option value="$PROJECT_DIR$/web/admin/static/js/admin.js" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/AdminServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/MenuService.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/dao/MenuDao.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/MenuDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/dao/AdminDao.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/domain/Menu.java" />
         <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/AdminDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/SecondCategoryDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/domain/Admin.java" />
+        <option value="$PROJECT_DIR$/web/product.jsp" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/AdminLoginServlet.java" />
+        <option value="$PROJECT_DIR$/web/admin/product.jsp" />
         <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/web/header.jsp" />
-        <option value="$PROJECT_DIR$/web/regist.jsp" />
-        <option value="$PROJECT_DIR$/web/login.jsp" />
+        <option value="$PROJECT_DIR$/web/userdetail.html" />
+        <option value="$PROJECT_DIR$/web/userdetail.jsp" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/SecondCategoryService.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/SecondCategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/dao/SecondCategoryDao.java" />
+        <option value="$PROJECT_DIR$/web/admin/static/js/secondcategory.js" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/SecondCategoryServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/dao/impl/SecondCategoryDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/CartServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/domain/QueryVo.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/domain/AjaxRes.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/domain/PageListRes.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/CategoryServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/MenuServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/OrderServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/PermissionServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/ProductServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/RegistServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/servlet/UserServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/filter/AdminLoginFilter.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/CartServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/CategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/MenuServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/OrderServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/PermissionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/itlike/service/impl/RoleServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -212,13 +360,15 @@
     <option name="width" value="1386" />
     <option name="height" value="730" />
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,12 +390,27 @@
             <path>
               <item name="antshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="antshop" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="itlike" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="antshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="antshop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="itlike" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="antshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -256,7 +421,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -265,20 +430,20 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.itlike.dao.impl" />
       <recent name="com.itlike.dao" />
-      <recent name="com.itlike.service" />
       <recent name="com.itlike.service.impl" />
+      <recent name="com.itlike.service" />
       <recent name="com" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.itlike.servlet" />
       <recent name="com.itlike.domain" />
+      <recent name="com.itlike.servlet" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\IntelliJIDEA2018.2.7\workspace\antshop\web" />
+      <recent name="D:\java\IntelliJIDEA2018.2.7\workspace\antshop\web\WEB-INF\lib" />
       <recent name="D:\java\IntelliJIDEA2018.2.7\workspace\antshop\web\admin\static\js" />
       <recent name="D:\java\IntelliJIDEA2018.2.7\workspace\antshop\web\admin\static\css" />
-      <recent name="D:\java\IntelliJIDEA2018.2.7\workspace\antshop\web" />
       <recent name="D:\java\IntelliJIDEA2018.2.7\workspace\antshop\src\com\itlike\domain" />
-      <recent name="D:\java\IntelliJIDEA2018.2.7\workspace\antshop\web\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -294,6 +459,38 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.antshop">
+    <configuration name="MailTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="antshop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itlike.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itlike.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itlike.test.MailTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MailTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="antshop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itlike.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.itlike.test" />
+      <option name="MAIN_CLASS_NAME" value="com.itlike.test.MailTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="shopCart.jsp" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/shopCart.jsp">
       <method v="2" />
     </configuration>
@@ -503,9 +700,13 @@
     <list>
       <item itemvalue="Tomcat Server.antshop" />
       <item itemvalue="JavaScript Debug.shopCart.jsp" />
+      <item itemvalue="JUnit.MailTest.test" />
+      <item itemvalue="JUnit.MailTest.test2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MailTest.test" />
+        <item itemvalue="JUnit.MailTest.test2" />
         <item itemvalue="JavaScript Debug.shopCart.jsp" />
       </list>
     </recent_temporary>
@@ -532,18 +733,55 @@
       <workItem from="1561335708148" duration="37652000" />
       <workItem from="1561376382157" duration="592000" />
       <workItem from="1561422601951" duration="16257000" />
-      <workItem from="1561510692521" duration="1132000" />
+      <workItem from="1561510692521" duration="22655000" />
+      <workItem from="1561595466072" duration="35155000" />
+      <workItem from="1561684261682" duration="9609000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="MailTest_test - 2019.06.26 at 17h 16m 44s.xml">
+      <configuration name="MailTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_test - 2019.06.26 at 17h 17m 12s.xml">
+      <configuration name="MailTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_test - 2019.06.26 at 17h 17m 30s.xml">
+      <configuration name="MailTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_test2 - 2019.06.26 at 17h 17m 59s.xml">
+      <configuration name="MailTest.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_test2 - 2019.06.26 at 17h 20m 35s.xml">
+      <configuration name="MailTest.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_test2 - 2019.06.26 at 17h 21m 30s.xml">
+      <configuration name="MailTest.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_test - 2019.06.26 at 17h 21m 37s.xml">
+      <configuration name="MailTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailTest_test - 2019.06.26 at 17h 53m 28s.xml">
+      <configuration name="MailTest.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173336000" />
+    <option name="totallyTimeSpent" value="239623000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49744463" visible="true" weight="0.26626325" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49744463" visible="true" weight="0.25945538" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="UI Designer" order="3" />
@@ -552,26 +790,27 @@
       <window_info id="Web" order="6" sideWeight="0.5025554" side_tool="true" weight="0.17473525" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879046" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.6569966" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969743" weight="0.5870307" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32935154" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32879046" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5015129" side_tool="true" weight="0.6575809" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5030257" side_tool="true" weight="0.6569966" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.31911263" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="JRebel Executor" order="13" />
       <window_info anchor="bottom" id="JRebel Console" order="14" side_tool="true" weight="0.32935154" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" weight="0.32879046" />
+      <window_info anchor="bottom" id="Thumbnails" order="16" weight="0.32935154" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32980332" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
     </layout>
   </component>
@@ -582,236 +821,324 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/CartDao.java">
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+        <state relative-caret-position="-5083" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/order.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/AdminDao.java">
+    <entry file="file://$PROJECT_DIR$/web/querendd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state relative-caret-position="27">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/static/js/category.js">
+    <entry file="file://$PROJECT_DIR$/web/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="85" column="41" lean-forward="true" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="41" />
+        <state relative-caret-position="-702">
+          <caret line="46" column="15" lean-forward="true" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/static/css/amazeui.min.css">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/layui/layui.all.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/updateOrder.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/SecondCategoryDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="141">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/filter/AdminLoginFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/SecondCategoryDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="12" column="115" selection-start-line="12" selection-start-column="115" selection-end-line="12" selection-end-column="115" />
+        <state relative-caret-position="378">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/cart.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/CartServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2889">
-          <caret line="33" column="57" lean-forward="true" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/shopCartloop.js">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/SecondCategoryService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
-          <caret line="64" column="40" lean-forward="true" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+          <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/detail.jsp">
+    <entry file="file://$PROJECT_DIR$/web/userdetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="115" column="44" lean-forward="true" selection-start-line="115" selection-start-column="44" selection-end-line="115" selection-end-column="44" />
+        <state relative-caret-position="2214">
+          <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/BaseServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/CartServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="843">
+          <caret line="142" column="35" selection-start-line="142" selection-start-column="35" selection-end-line="142" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/domain/QueryVo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/CheckCodeServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2694">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/static/js/secondcategory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="128" column="55" lean-forward="true" selection-start-line="128" selection-start-column="55" selection-end-line="128" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/itlike/domain/AjaxRes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/static/tree.json">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/product.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/domain/PageListRes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-696">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="297">
+          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/index.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/category.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/admin.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/user.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1209">
-          <caret selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/nopermission.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/menu.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/order.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/static/js/order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="62" column="59" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/OrderDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/OrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/shopCart.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-750">
-          <caret line="111" selection-start-line="111" selection-end-line="111" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="97" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="9" selection-end-column="97" />
+        <state relative-caret-position="341">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="37" column="44" lean-forward="true" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        <state relative-caret-position="-1398">
+          <caret line="2" column="33" lean-forward="true" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/CategoryServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        <state relative-caret-position="354">
+          <caret line="113" column="51" selection-start-line="113" selection-start-column="51" selection-end-line="113" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/domain/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/MenuServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="24" />
+        <state relative-caret-position="60">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/index.js">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/OrderServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1297">
-          <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+        <state relative-caret-position="-453">
+          <caret line="122" column="16" selection-start-line="122" selection-start-column="16" selection-end-line="122" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/PermissionServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/ProductServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        <state relative-caret-position="4293">
+          <caret line="176" column="10" selection-start-line="176" selection-start-column="10" selection-end-line="176" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/RegistServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+        <state relative-caret-position="-372">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/header.js">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/UserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        <state relative-caret-position="2673">
+          <caret line="117" column="17" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/ProductDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/SecondCategoryServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1992">
-          <caret line="32" column="109" selection-start-line="32" selection-start-column="109" selection-end-line="32" selection-end-column="109" />
+        <state relative-caret-position="-837">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/RoleServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1519">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/filter/AdminLoginFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/test/MailTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-993">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/util/MD5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/util/JDBCUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/AdminServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="55" column="17" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/CartServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/CategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/MenuServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/PermissionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/RoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2592">
+          <caret line="104" column="15" selection-start-line="104" selection-start-column="15" selection-end-line="104" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1059">
+          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/SecondCategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/service/impl/SendEmailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/AdminDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-993">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -822,93 +1149,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/SecondCategoryDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/CategoryDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="26" column="138" selection-start-line="26" selection-start-column="138" selection-end-line="26" selection-end-column="138" />
+        <state relative-caret-position="108">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/UserDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/MenuDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="25" column="93" selection-start-line="25" selection-start-column="93" selection-end-line="25" selection-end-column="93" />
+        <state relative-caret-position="108">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/OrderDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
+        <state relative-caret-position="108">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/AdminDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/PermissionDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+        <state relative-caret-position="108">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/CategoryDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/impl/RoleDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-776">
-          <caret line="20" column="99" selection-start-line="20" selection-start-column="99" selection-end-line="20" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/dao/ProductDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="34" column="53" lean-forward="true" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3456">
-          <caret line="128" column="16" lean-forward="true" selection-start-line="128" selection-start-column="12" selection-end-line="128" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/order.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="58" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/itlike/servlet/OrderServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/layui/layui.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/regist.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="21" column="46" lean-forward="true" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="149" column="19" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="19" />
+        <state relative-caret-position="108">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>

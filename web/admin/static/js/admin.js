@@ -40,9 +40,18 @@ $(function () {
             $.messager.alert("提示", "选择一行数据进行编辑");
             return;
         }
-
         $("#admin_dialog").dialog("setTitle", "修改管理员");
         $("#admin_dialog").dialog("open");
+        $.get("/roleServlet?action=getRoleByAid&id=" + rowData.id, function (data) {
+            /*设置下拉列表数据回显*/
+            data=$.parseJSON(data);
+            var arr=[];
+            for(var i=0;i<data.length;i++){
+                arr.push(data[i].rid);
+            }
+            console.log(arr);
+            $("#role").combobox("setValues", arr);
+        });
         /*选中的数据回显*/
         $("#admin_form").form("load", rowData);
     });
@@ -61,6 +70,16 @@ $(function () {
         /*提交表单*/
         $("#admin_form").form("submit", {
             url: url,
+            onSubmit: function (param) {
+                /*获取下拉列表的值*/
+                var values = $("#role").combobox("getValues");
+                for (var i = 0; i < values.length; i++) {
+                    /*取出每一个值*/
+                    var rid = values[i];
+                    /*给它装到集合中*/
+                    param["roles[" + i + "].rid"] = rid;
+                }
+            },
             success: function (data) {
                 data = $.parseJSON(data);
                 if (data.success) {
@@ -99,6 +118,25 @@ $(function () {
                 });
             }
         });
+    });
+    /*角色选择 下拉列表*/
+    $("#role").combobox({
+        width: 150,
+        panelHeight: 'auto',
+        editable: false,
+        url: "/roleServlet?action=roleList",
+        textField: 'rname',
+        valueField: 'rid',
+        multiple: true,
+        onLoadSuccess: function () { /*数据加载完毕之后回调*/
+            $("#role").each(function (i) {
+                var span = $(this).siblings("span")[i];
+                var targetInput = $(span).find("input:first");
+                if (targetInput) {
+                    $(targetInput).attr("placeholder", $(this).attr("placeholder"));
+                }
+            });
+        }
     });
     $("#cancel").click(function () {
         $("#admin_dialog").dialog("close");

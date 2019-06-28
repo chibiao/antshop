@@ -28,7 +28,7 @@ public class ProductServlet extends BaseServlet {
     public String productIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         return "/admin/product.jsp";
     }
-
+    /*获取所有的商品列表*/
     public void productList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 1.获取所有的参数
         Map<String, String[]> parameterMap = request.getParameterMap();
@@ -154,7 +154,7 @@ public class ProductServlet extends BaseServlet {
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         }
     }
-
+    /*添加商品*/
     public void addProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         Product product = new Product();
@@ -174,7 +174,7 @@ public class ProductServlet extends BaseServlet {
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         }
     }
-
+    /*上传图片*/
     public void upload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         try {

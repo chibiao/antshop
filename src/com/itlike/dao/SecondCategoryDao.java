@@ -11,9 +11,14 @@ public interface SecondCategoryDao {
 
     List<SecondCategory> selectAll(QueryVo vo) throws SQLException;
 
-    void updateSecondCategory(SecondCategory secondCategory)throws SQLException;
+    void updateSecondCategory(SecondCategory secondCategory) throws SQLException;
 
-    void addSecondCategory(SecondCategory secondCategory)throws SQLException;
+    void addSecondCategory(SecondCategory secondCategory) throws SQLException;
 
-    List<SecondCategory> AllSecondCategory()throws SQLException;
+    List<SecondCategory> AllSecondCategory() throws SQLException;
+
+    /*打破商品和二级分类的关系*/
+    void delSecondCateoryAndProductRel(int id) throws SQLException;
+
+    void deleteSecondCateory(int id)throws SQLException;
 }

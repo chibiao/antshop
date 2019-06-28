@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.itlike.domain.AjaxRes;
 import com.itlike.domain.User;
 import com.itlike.service.UserService;
+import com.itlike.service.impl.SendEmailService;
 import com.itlike.service.impl.UserServiceImpl;
 import com.itlike.util.MD5Util;
 import org.apache.commons.beanutils.BeanUtils;
@@ -18,11 +19,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.util.Map;
 
-
 @WebServlet(value = "/registServlet")
 public class RegistServlet extends HttpServlet {
-    private UserService userService=new UserServiceImpl();
-
+    private UserService userService = new UserServiceImpl();
+    private SendEmailService sendEmailService = new SendEmailService();
+    /*注册*/
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
@@ -33,6 +34,8 @@ public class RegistServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         // 获取验证码
         String code = request.getParameter("code");
+        /*获取生成的验证码
+        * */
         String word = (String) this.getServletContext().getAttribute(
                 "checkCode");
         System.out.println(word);
@@ -53,17 +56,23 @@ public class RegistServlet extends HttpServlet {
             User checkUser = null;
             try {
                 //判断用户名是否存在
-                checkUser=userService.getUserByUsername(user.getUsername());
-                if(checkUser==null){
+                checkUser = userService.getUserByUsername(user.getUsername());
+                if (checkUser == null) {
                     /*添加用户*/
-                    user.setState(true);
+                    user.setState(false);
                     user.setPassword(MD5Util.md5(user.getPassword()));
                     userService.addUser(user);
                     ajaxRes.setSuccess(true);
-                    ajaxRes.setMsg("注册成功");
+                    ajaxRes.setMsg("注册成功,请去邮箱中激活");
+                    try {
+                        sendEmailService.sendEmail(user.getEmail(), user.getUsername());
+                    } catch (Exception e) {
+                        System.out.println("发送邮件失败");
+                        e.printStackTrace();
+                    }
                     //跳转到登录页面
                     response.getWriter().print(JSON.toJSONString(ajaxRes));
-                }else {
+                } else {
                     ajaxRes.setMsg("用户名已存在");
                     ajaxRes.setSuccess(false);
                     response.getWriter().print(JSON.toJSONString(ajaxRes));

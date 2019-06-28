@@ -1,6 +1,6 @@
 $(function () {
     $("#role_dg").datagrid({
-        url: "/getRoles",
+        url: "/roleServlet?action=getRoles",
         columns: [[
             {field:'rnum',title:'角色编号',width:100,align:'center'},
             {field:'rname',title:'角色名称',width:100,align:'center'}
@@ -25,10 +25,10 @@ $(function () {
                 var url;
                 if (id) {
                     /*编辑*/
-                    url = "/updateRole";
+                    url = "/roleServlet?action=updateRole";
                 } else {
                     /*添加*/
-                    url = "/saveRole";
+                    url = "/roleServlet?action=saveRole";
                 }
                 /*提交表单*/
                 $("#myform").form("submit",{
@@ -85,7 +85,8 @@ $(function () {
         }
         /*加载当前角色下的权限*/
         var options =  $("#role_data2").datagrid("options");
-        options.url = "/getPermissionByRid?rid="+rowData.rid;
+        options.url = "/permissionServlet?action=getPermissionByRid&rid="+rowData.rid;
+        console.log(rowData.rid);
         /*重新加载数据*/
         $("#role_data2").datagrid("load");
         $("#dialog").dialog("setTitle", "编辑角色");
@@ -106,8 +107,9 @@ $(function () {
         $.messager.confirm("确认", "是否删除该角色", function (res) {
             if (res) {
                 /*做删除操作*/
-                $.get("/deleteRole?rid=" + rowData.rid, function (data) {
+                $.get("/roleServlet?action=deleteRole&rid=" + rowData.rid, function (data) {
                     /*get请求返回的是json数据  不需要解析*/
+                    data=$.parseJSON(data);
                     if (data.success) {
                         $.messager.alert("温馨提示", data.msg);
                         /*重新加载数据表格*/
@@ -127,7 +129,7 @@ $(function () {
         height:270,
         fitColumns:true,
         singleSelect:true,
-        url:"/permissionList",
+        url:"/permissionServlet?action=permissionList",
         columns:[[
             {field:'pname',title:'权限名称',width:100,align:'center'}
         ]],

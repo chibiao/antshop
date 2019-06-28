@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>登录页面</title>
+    <script src="js/jquery-1.11.0.js"></script>
 </head>
 <style>
     *{/*请空所有边距*/
@@ -152,15 +153,18 @@
                 <!--用户名-->
                <div class="username">
                		<span></span>
-               		<input type="text" placeholder="请输入用户名..." name="username">
+               		<input type="text" placeholder="请输入用户名..." name="username" id="username" >
                </div>
                 <!--密码-->
                 <div class="password">
                 	<span></span>
-                	<input type="password" name="password" placeholder="请输入密码..." >
+                	<input type="password" name="password" placeholder="请输入密码..." id="password">
+                </div>
+                <div>
+                    <input type="checkbox" name="remember" id="remember" style="height: 26px;width: 19px" value="true"><i>记住密码</i>
                 </div>
                 <div class="login_btn">
-                	<input type="submit" class="login_btn" value="登录">
+                    <input type="submit" class="login_btn" value="登录">
                 </div>
             </form>
             <div class="forgotPwd"><!--忘记密码-->
@@ -171,5 +175,29 @@
 </div>
 <%@include file="footer.jsp" %>
 </body>
-
+<script>
+    var cookies=document.cookie.split(";");
+    function getCK(mkey) {
+        for (var i=0;i<cookies.length;i++){
+            var kv = cookies[i].split('=');
+            console.log(kv[0].trim());
+            console.log(mkey);
+            if (kv[0].trim()==mkey){
+                return kv[1].trim();
+            } 
+        }
+        return '';
+    }
+    window.onload=function () {
+        var remember=getCK('remember');
+        var username=getCK('username');
+        var password=getCK('password');
+        console.log(remember);
+        if (remember=='true'){
+            $("#username").val(username);
+            $("#password").val(password);
+            document.getElementById("remember").checked='checked';
+        }
+    }
+</script>
 </html>

@@ -34,7 +34,13 @@
                     欢迎:<span id="username">${user.username }</span>
                     <a href="/loginServlet?action=logout">退出</a>
                 </c:if>
-                <a href="shopCart.jsp">购物车</a> <a href="#" id="orders">我的订单</a>
+                <a href="shopCart.jsp">购物车</a>
+                <c:if test="${!empty user }">
+                    <a href="#" id="orders">我的订单</a>
+                </c:if>
+                <c:if test="${!empty user }">
+                    <a href="userdetail.jsp" id="userdetail">我的个人信息</a>
+                </c:if>
             </div>
         </div>
     </div>

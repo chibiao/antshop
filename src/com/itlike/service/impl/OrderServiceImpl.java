@@ -16,12 +16,24 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao = new OrderDaoImpl();
     private ProductDao productDao = new ProductDaoImpl();
+    /*添加订单*/
 
+    /**
+     * @param order 订单
+     * @param user  用户
+     * @throws SQLException
+     */
     @Override
     public void addOrder(Orders order, User user) throws SQLException {
         orderDao.addOrder(order, user);
     }
 
+    /**
+     * 获取user的订单
+     * @param id    user id
+     * @return
+     * @throws SQLException
+     */
     @Override
     public List<Orders> getOrderListByUser(Long id) throws SQLException {
         List<Orders> orders = orderDao.getOrderListByUser(id);
@@ -35,7 +47,7 @@ public class OrderServiceImpl implements OrderService {
         }
         return orders;
     }
-
+    /*更新支付状态*/
     @Override
     public void updatePayState(String orderId) throws SQLException {
         orderDao.updatePayState(orderId);

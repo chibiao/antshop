@@ -49,4 +49,16 @@ public class SecondCategoryDaoImpl implements SecondCategoryDao {
         String sql="select * from secondcategory";
         return qr.query(sql, new BeanListHandler<>(SecondCategory.class));
     }
+
+    @Override
+    public void delSecondCateoryAndProductRel(int id) throws SQLException {
+        String sql="update product set scid=null where scid=?";
+        qr.update(sql,id);
+    }
+
+    @Override
+    public void deleteSecondCateory(int id) throws SQLException {
+        String sql ="delete from secondcategory where id=?";
+        qr.update(sql,id);
+    }
 }

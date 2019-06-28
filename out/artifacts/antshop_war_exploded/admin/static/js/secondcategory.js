@@ -87,7 +87,7 @@ $(function () {
         /*提醒用户,是否做删除操作*/
         $.messager.confirm("确认", "是否做删除操作", function (res) {
             if (res) {
-                $.get("/categoryServlet?action=deleteCategory&id=" + rowData.id, function (data) {
+                $.get("/secondCategoryServlet?action=deleteSecondCategory&id=" + rowData.id, function (data) {
                     /*get请求返回的是json数据  不需要解析*/
                     data = $.parseJSON(data);
                     if (data.success) {

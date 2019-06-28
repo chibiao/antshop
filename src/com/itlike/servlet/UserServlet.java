@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.sql.SQLException;
 import java.util.Map;
 
 /**
@@ -33,7 +34,24 @@ public class UserServlet extends BaseServlet {
     public String userIndex(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         return "/admin/user.jsp";
     }
-
+    /*更新个人信息*/
+    public void updateUserDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        User user = (User) request.getSession().getAttribute("user");
+        String name = request.getParameter("name");
+        String phone = request.getParameter("phone");
+        String email = request.getParameter("email");
+        user.setName(name);
+        user.setPhone(phone);
+        user.setEmail(email);
+        try {
+            userService.updateUser(user);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        request.getSession().setAttribute("user",user);
+        response.getWriter().print("<script type='text/javascript'>alert('修改成功');</script>");
+        response.setHeader("refresh", "1;url=/index.jsp");
+    }
     /*分页查询user*/
     public void userList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         QueryVo vo = new QueryVo();
@@ -73,7 +91,7 @@ public class UserServlet extends BaseServlet {
         }
         response.getWriter().print(JSON.toJSONString(ajaxRes));
     }
-
+    /*后台更新用户的信息*/
     public void updateUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         // 1.获取所有的参数
@@ -97,6 +115,7 @@ public class UserServlet extends BaseServlet {
             response.getWriter().print(JSON.toJSONString(ajaxRes));
         }
     }
+    /*更新角色的是否可用状态*/
     public void updateUserState(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         AjaxRes ajaxRes = new AjaxRes();
         // 1.获取所有的参数

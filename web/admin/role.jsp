@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Title</title>
-    <%@include file="/static/common/common.jsp" %>
-    <script type="text/javascript" src="static/js/role.js"></script>
+    <%@include file="./static/common/common.jsp" %>
+    <script type="text/javascript" src="/admin/static/js/role.js"></script>
     <style>
         #dialog #myform .panel-header {
             height: 25px;
@@ -27,7 +27,7 @@
 <table id="role_dg"></table>
 <%--对话框--%>
 <div id="dialog">
-    <form id="myform">
+    <form id="myform" method="post">
         <table align="center" style="border-spacing: 20px 30px">
             <input type="hidden" name="rid">
             <tr align="center">
