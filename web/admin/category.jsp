@@ -30,12 +30,8 @@
             <input type="hidden" name="id"><%--为了做编辑--%>
             <tr>
                 <td>名称</td>
-                <td><input type="text" name="name"></td>
+                <td><input type="text" name="name" class="easyui-validatebox" data-options="required:true" required="required"></td>
             </tr>
-            <%--<tr>
-                <td>父菜单</td>
-                <td><input type="text" name="parent.id" id="parentCategory" class="easyui-combobox" placeholder="请选择父菜单"/></td>
-            </tr>--%>
         </table>
     </form>
 </div>

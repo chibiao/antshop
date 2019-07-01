@@ -69,6 +69,12 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getHotProduct() throws SQLException {
         return productDao.getHotProduct();
     }
+
+    @Override
+    public List<Product> getProductByName(String name) throws SQLException {
+        return productDao.getProductByName(name);
+    }
+
     /*获取商品列表*/
     @Override
     public PageListRes getProductList(QueryVo vo) throws SQLException {

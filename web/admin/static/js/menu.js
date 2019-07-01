@@ -1,6 +1,6 @@
 $(function () {
     $("#menu_datagrid").datagrid({
-        url: "/menuList",
+        url: "/menuServlet?action=menuList",
         columns: [[
             {field: 'text', title: '名称', width: 100, align: 'center'},
             {field: 'url', title: '跳转地址', width: 100, align: 'center'},
@@ -75,10 +75,10 @@ $(function () {
                 return;
             }
             /*编辑*/
-            url = "updateMenu";
+            url = "/menuServlet?action=updateMenu";
         } else {
             /*添加*/
-            url = "saveMenu";
+            url = "/menuServlet?action=saveMenu";
         }
         /*提交表单*/
         $("#menu_form").form("submit", {
@@ -112,8 +112,9 @@ $(function () {
         $.messager.confirm("确认", "是否做删除操作", function (res) {
             if (res) {
                 /*做离职操作*/
-                $.get("/deleteMenu?id=" + rowData.id, function (data) {
+                $.get("/menuServlet?action=deleteMenu&id=" + rowData.id, function (data) {
                     /*get请求返回的是json数据  不需要解析*/
+                    data=$.parseJSON(data);
                     if (data.success) {
                         $.messager.alert("温馨提示", data.msg);
                         /*重新加载数据表格*/
@@ -132,7 +133,7 @@ $(function () {
         width: 150,
         panelHeight: 'auto',
         editable: false,
-        url: "/parentMenuList",
+        url: "/menuServlet?action=parentMenuList",
         textField: 'text',
         valueField: 'id',
         onLoadSuccess: function () { /*数据加载完毕之后回调*/

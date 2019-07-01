@@ -68,4 +68,10 @@ public class RoleDaoImpl implements RoleDao {
         String sql=" select rid from admin_role_rel where aid=?";
         return qr.query(sql,new BeanListHandler<>(Role.class),id);
     }
+
+    @Override
+    public void deleteRoleAndAdminRel(long rid) throws SQLException {
+        String sql="delete from admin_role_rel where rid=?";
+        qr.update(sql,rid);
+    }
 }

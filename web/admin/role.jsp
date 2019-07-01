@@ -31,8 +31,8 @@
         <table align="center" style="border-spacing: 20px 30px">
             <input type="hidden" name="rid">
             <tr align="center">
-                <td>角色编号: <input type="text" name="rnum" class="easyui-validatebox" style="width: 120px"></td>
-                <td>角色名称: <input type="text" name="rname" class="easyui-validatebox" style="width: 120px"></td>
+                <td>角色编号: <input type="text" name="rnum" class="easyui-validatebox" data-options="required:true" required="required" style="width: 120px"></td>
+                <td>角色名称: <input type="text" name="rname" class="easyui-validatebox" data-options="required:true" required="required" style="width: 120px"></td>
             </tr>
             <tr>
                 <td>

@@ -4,10 +4,7 @@ import com.itlike.dao.OrderDao;
 import com.itlike.dao.ProductDao;
 import com.itlike.dao.impl.OrderDaoImpl;
 import com.itlike.dao.impl.ProductDaoImpl;
-import com.itlike.domain.OrderItem;
-import com.itlike.domain.Orders;
-import com.itlike.domain.Product;
-import com.itlike.domain.User;
+import com.itlike.domain.*;
 import com.itlike.service.OrderService;
 
 import java.sql.SQLException;
@@ -17,7 +14,9 @@ public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao = new OrderDaoImpl();
     private ProductDao productDao = new ProductDaoImpl();
     /*添加订单*/
-
+    public Long getCount() throws SQLException {
+        return orderDao.getCount();
+    }
     /**
      * @param order 订单
      * @param user  用户
@@ -64,12 +63,28 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Orders> getAllOrders() throws SQLException {
-        return orderDao.getAllOrders();
+    public PageListRes getAllOrders(QueryVo vo) throws SQLException {
+        PageListRes pageListRes = new PageListRes();
+        List<Orders> allOrders = orderDao.getAllOrders(vo);
+        pageListRes.setRows(allOrders);
+        pageListRes.setTotal(getCount());
+        return pageListRes;
     }
 
     @Override
     public void updateSendState(String uuid) throws SQLException {
         orderDao.updateSendState(uuid);
+    }
+
+    @Override
+    public void deleteOrder(String uuid) {
+        try {
+            /*删除订单中的订单项*/
+            orderDao.deleteOrderItem(uuid);
+            /*删除订单*/
+            orderDao.deleteOrder(uuid);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

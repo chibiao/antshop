@@ -28,7 +28,7 @@
             </tr>
             <tr>
                 <td>管理员名称</td>
-                <td><input type="text" name="name"></td>
+                <td><input type="text" name="name" class="easyui-validatebox" data-options="required:true" required="required"></td>
             </tr>
             <tr id="password">
                 <td>管理员密码</td>

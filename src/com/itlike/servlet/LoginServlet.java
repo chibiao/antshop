@@ -1,5 +1,6 @@
 package com.itlike.servlet;
 
+import com.alibaba.fastjson.JSON;
 import com.itlike.domain.AjaxRes;
 import com.itlike.domain.Cart;
 import com.itlike.domain.User;
@@ -36,7 +37,8 @@ public class LoginServlet extends BaseServlet {
     }
 
     /*登录*/
-    public String login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        AjaxRes ajaxRes=new AjaxRes();
         String username = request.getParameter("username");
         String remember = request.getParameter("remember");
         String password = request.getParameter("password");
@@ -45,6 +47,21 @@ public class LoginServlet extends BaseServlet {
             /*去查询用户是否存在*/
             User user = userService.getUserByUsername(username);
             /*如果用户存在 判断密码是否相同*/
+            if (user==null){
+                ajaxRes.setSuccess(false);
+                ajaxRes.setMsg("用户名不存在");
+                response.getWriter().print(JSON.toJSONString(ajaxRes));
+            }
+            if (user != null && !user.getPassword().equals(MD5Util.md5(request.getParameter("password")))) {
+                ajaxRes.setSuccess(false);
+                ajaxRes.setMsg("密码不正确");
+                response.getWriter().print(JSON.toJSONString(ajaxRes));
+            }
+            if(user != null && user.getPassword().equals(MD5Util.md5(request.getParameter("password"))) && !user.getState().booleanValue() == true){
+                ajaxRes.setSuccess(false);
+                ajaxRes.setMsg("账号未激活");
+                response.getWriter().print(JSON.toJSONString(ajaxRes));
+            }
             if (user != null && user.getPassword().equals(MD5Util.md5(request.getParameter("password"))) && user.getState().booleanValue() == true) {
                 /*登录后写到session中*/
                 HttpSession session = request.getSession();
@@ -52,7 +69,11 @@ public class LoginServlet extends BaseServlet {
                 /*登录后遍历session中的购物数据 添加到数据库*/
                 List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
                 if (cartList != null && cartList.size() != 0) {
-                    cartService.addToCart(user.getId(), cartList);
+                    try {
+                        cartService.addToCart(user.getId(), cartList);
+                    }catch (Exception e){
+                        System.out.println("商品添加成功");
+                    }
                 }
                 /*判断是否记住密码*/
                 if ("true".equals(remember)){
@@ -66,13 +87,13 @@ public class LoginServlet extends BaseServlet {
                     ck3.setMaxAge(60*60);
                     response.addCookie(ck3);
                 }
-                return "redirect:index.jsp";
+                ajaxRes.setSuccess(true);
+                ajaxRes.setMsg("登录成功");
+                response.getWriter().print(JSON.toJSONString(ajaxRes));
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return "redirect:index.jsp";
         }
-        return "redirect:login.jsp";
     }
 
     /*退出登录*/

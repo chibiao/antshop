@@ -1,7 +1,6 @@
 package com.itlike.service.impl;
 
 import javax.mail.Message;
-import javax.mail.NoSuchProviderException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;

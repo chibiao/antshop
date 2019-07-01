@@ -85,6 +85,7 @@ public class RoleServiceImpl implements RoleService {
         /*删除关系*/
         try {
             roleDao.deleteRoleAndPermissionRel(rid);
+            roleDao.deleteRoleAndAdminRel(rid);
         } catch (SQLException e) {
             ajaxRes.setSuccess(false);
             ajaxRes.setMsg("删除失败");

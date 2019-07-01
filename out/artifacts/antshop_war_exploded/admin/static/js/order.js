@@ -54,11 +54,11 @@ $(function () {
         /*获取当前选中的行*/
         var rowData = $("#user_datagrid").datagrid("getSelected");
         if (!rowData) {
-            $.messager.alert("提示", "选择一行数据进行删除");
+            $.messager.alert("提示", "选择一行数据进行发货");
             return;
         }
         /*提醒用户,是否做删除操作*/
-        $.messager.confirm("确认", "是否做删除操作", function (res) {
+        $.messager.confirm("确认", "是否发货", function (res) {
             if (res) {
                 $.get("/orderServlet?action=updateSendState&uuid=" + rowData.uuid, function (data) {
                     /*get请求返回的是json数据  不需要解析*/

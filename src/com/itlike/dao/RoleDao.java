@@ -25,4 +25,6 @@ public interface RoleDao {
     List<Role> getRoleList()throws SQLException;
 
     List<Role> getRoleByAid(Long id)throws SQLException;
+
+    void deleteRoleAndAdminRel(long rid)throws SQLException;
 }

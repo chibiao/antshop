@@ -5,7 +5,29 @@
 <head>
     <meta charset="UTF-8">
     <title>登录页面</title>
+    <script src="${pageContext.request.contextPath}/layui/layui.all.js" charset="utf-8"></script>
     <script src="js/jquery-1.11.0.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                /*Ajax发送请求, 是没有办法跳转服务当中的请求
+                * 只能通过在浏览器当中来跳转
+                * */
+                $.post("/loginServlet?action=login",$("form").serialize(),function (data) {
+                    /*把data  json格式的字符串  转成 json 数据*/
+                    data = $.parseJSON(data);
+                    if (data.success){
+                        /*跳转到首页*/
+                        layer.alert(data.msg);
+                        window.location.href = "/index.jsp"
+                    } else {
+                        layer.alert(data.msg);
+                    }
+                });
+            });
+
+        });
+    </script>
 </head>
 <style>
     *{/*请空所有边距*/
@@ -53,7 +75,7 @@
     }
     .login_center .login_bg{
         width: 350px;
-        height: 351px;
+        height: 370px;
         background: rgba(255,255,255,0.95);
         margin-left: 850px;
         margin-top: 120px;
@@ -164,7 +186,7 @@
                     <input type="checkbox" name="remember" id="remember" style="height: 26px;width: 19px" value="true"><i>记住密码</i>
                 </div>
                 <div class="login_btn">
-                    <input type="submit" class="login_btn" value="登录">
+                    <input type="button" id="btn" class="login_btn" value="登录">
                 </div>
             </form>
             <div class="forgotPwd"><!--忘记密码-->

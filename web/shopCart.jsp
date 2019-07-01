@@ -39,9 +39,8 @@
             <main class="jd_shopCart_list">
                 <section v-for="(shop, index) in shopListArr">
                     <div class="shopCart_list_title">
-                        <span class="cart_logo"></span>
-                        <span class="cart_title">京东自营</span>
-                        <span class="cart_sale">您享受满100元免运费服务</span>
+                        <span class="cart_title">码蚁自营</span>
+                        <span class="cart_sale">满100元免运费服务</span>
                     </div>
                     <div class="shopCart_list_con">
                         <div class="list_con_left">
@@ -63,7 +62,7 @@
                                 <div class="shop_deal">
                                     <div class="shop_deal_left">
                                         <span @click="singerShopPrice(shop, false)">-</span>
-                                        <input type="tel" value="shop.item.shopNumber" v-model="shop.item.shopNumber">
+                                        <input type="tel" disabled="disabled" value="shop.item.shopNumber" v-model="shop.item.shopNumber">
                                         <span @click="singerShopPrice(shop, true)">+</span>
                                     </div>
                                     <div class="shop_deal_right" @click="clickTrash(shop)">

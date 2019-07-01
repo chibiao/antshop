@@ -40,7 +40,9 @@ public class UserServlet extends BaseServlet {
         String name = request.getParameter("name");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
+        String addr=request.getParameter("addr");
         user.setName(name);
+        user.setAddr(addr);
         user.setPhone(phone);
         user.setEmail(email);
         try {

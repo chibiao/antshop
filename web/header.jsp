@@ -11,9 +11,9 @@
     <!--设置标签图标-->
     <link href="favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="style/footerStyle.css">
-    <link rel="stylesheet" href="./layui/css/layui.css">
+    <%--<link rel="stylesheet" href="./layui/css/layui.css">--%>
     <script src="js/jquery-1.11.0.js"></script>
-    <script src="layui/layui.all.js" charset="utf-8"></script>
+    <%--<script src="layui/layui.all.js" charset="utf-8"></script>--%>
 </head>
 <body>
 <!--头部-->
@@ -57,9 +57,9 @@
             <!--中部搜索-->
             <div class="h_c_search">
 
-                <form action="#">
-                    <input type="text" placeholder="请输入想要的宝贝..." class="s_input">
-                    <input type="submit" value="搜索" class="s_button">
+                <form action="/productServlet?action=getProductByName" method="post" id="inputForm">
+                    <input type="text"   class="s_input" name="name" id="s_input">
+                    <input type="submit" value="搜索" class="s_button" id="inputBtn">
                 </form>
 
                 <div class="hot">
@@ -97,6 +97,22 @@
                     }
                 }
             })
-        })
+        });
+        /*$("#inputBtn").click(function () {
+            /!*Ajax发送请求, 是没有办法跳转服务当中的请求
+            * 只能通过在浏览器当中来跳转
+            * *!/
+            var name=$("#s_input").val();
+            console.log(name);
+            $.ajax({
+                url:'/productServlet',
+                type:'post',
+                dataType:'json',
+                data: {action:'getProductByName',name:name},
+                success:function (data) {
+                    window.location.href='product.jsp'
+                }
+            });
+        });*/
     });
 </script>

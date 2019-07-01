@@ -91,7 +91,7 @@
                 layer.alert("请再次输入密码");
                 return;
             }
-            if(!(/^1[3456789]\d{9}$/.test(phone))){
+            if(!(/^1[34589]\d{9}$/.test(phone))){
                 layer.alert("手机号码有误，请重填");
                 return;
             }

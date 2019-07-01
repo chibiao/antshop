@@ -26,7 +26,7 @@
             <input type="hidden" name="id"><%--为了做编辑--%>
             <tr>
                 <td>用户名</td>
-                <td><input type="text" name="username"></td>
+                <td><input type="text" name="username" class="easyui-validatebox" data-options="required:true" required="required"></td>
                 <td name="passwordbox">密码</td>
                 <td name="passwordbox"><input type="text" name="password"></td>
             </tr>
@@ -34,7 +34,7 @@
                 <td>真实姓名</td>
                 <td><input type="text" name="name"></td>
                 <td>电话</td>
-                <td><input type="tel" name="phone"></td>
+                <td><input type="tel" name="phone" data-options="prompt:'请输入正确的手机号码。',validType:'phoneNum'"></td>
             </tr>
             <tr>
                 <td>电子邮箱</td>

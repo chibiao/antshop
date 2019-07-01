@@ -3,11 +3,13 @@ package com.itlike.dao.impl;
 import com.itlike.dao.OrderDao;
 import com.itlike.domain.OrderItem;
 import com.itlike.domain.Orders;
+import com.itlike.domain.QueryVo;
 import com.itlike.domain.User;
 import com.itlike.util.JDBCUtil;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -56,14 +58,32 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
-    public List<Orders> getAllOrders() throws SQLException {
-        String sql="select * from orders";
-        return qr.query(sql,new BeanListHandler<>(Orders.class));
+    public List<Orders> getAllOrders(QueryVo vo) throws SQLException {
+        String sql="select * from orders limit ?,?";
+        return qr.query(sql,new BeanListHandler<>(Orders.class),(vo.getPage()-1)*vo.getRows(),vo.getRows());
     }
 
     @Override
     public void updateSendState(String uuid) throws SQLException {
         String sql ="update orders set sendState=true where uuid=?";
         qr.update(sql,uuid);
+    }
+
+    @Override
+    public void deleteOrder(String uuid) throws SQLException {
+        String sql ="delete from orders where uuid=?";
+        qr.update(sql,uuid);
+    }
+
+    @Override
+    public void deleteOrderItem(String uuid) throws SQLException {
+        String sql="delete from orderitem where orderId=?";
+        qr.update(sql,uuid);
+    }
+
+    @Override
+    public Long getCount() throws SQLException {
+        String sql ="select count(*) from orders";
+        return qr.query(sql,new ScalarHandler<>(1));
     }
 }

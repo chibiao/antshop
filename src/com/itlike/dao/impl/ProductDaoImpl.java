@@ -111,6 +111,12 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
+    public List<Product> getProductByName(String name) throws SQLException {
+        String sql="select * from product where name like ?";
+        return qr.query(sql,new BeanListHandler<>(Product.class),"%"+name+"%");
+    }
+
+    @Override
     public List<Product> getProductBySecondCategory(int id, Integer page) throws SQLException {
         String sql ="select * from product where scid=? and state=true limit ?,8";
         return qr.query(sql,new BeanListHandler<>(Product.class),id,page-1);

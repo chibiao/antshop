@@ -63,10 +63,10 @@ pageEncoding="UTF-8" %>
                         <input type="text" name="email" value="${user.email}" lay-verify="email" autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">个性签名</label>
-                    <div class="layui-input-block">
-                        <textarea name="remarks" placeholder="请输入内容" class="layui-textarea"></textarea>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">我的地址</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="addr" value="${user.addr}"  autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">

@@ -48,7 +48,7 @@
         <div class="goods_count">
 				<p><lable>购买数量</lable>
 					<input type="button" id='1' width=50px value="-" onclick="minx(1)">
-					<input type="text" id='1num' name="T1" size="20" value="1">
+					<input type="text" id='1num' name="T1" size="20" value="1" disabled="disabled">
 					<input type="button" id='1' width=50px value="+" onclick="add(1)">
 				</p>
 			</div>

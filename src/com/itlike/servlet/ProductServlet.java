@@ -41,6 +41,24 @@ public class ProductServlet extends BaseServlet {
             e.printStackTrace();
         }
     }
+    public String getProductByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        System.out.println(name);
+        try {
+            List<Product> productByName = productService.getProductByName(name);
+            System.out.println(productByName);
+            PageBean pageBean = new PageBean();
+            pageBean.setProducts(productByName);
+            request.setAttribute("pageBean", pageBean);
+            AjaxRes ajaxRes=new AjaxRes();
+            ajaxRes.setSuccess(true);
+            ajaxRes.setMsg("获取成功");
+            return "product.jsp";
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "product.jsp";
+    }
     /*获取热门商品*/
     public void getHotProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 1.获取所有的参数

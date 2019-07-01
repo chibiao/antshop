@@ -3,23 +3,23 @@ package com.itlike.servlet;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.itlike.domain.AjaxRes;
-import com.itlike.domain.OrderItem;
-import com.itlike.domain.Orders;
-import com.itlike.domain.User;
+import com.itlike.domain.*;
 import com.itlike.service.CartService;
 import com.itlike.service.OrderService;
 import com.itlike.service.impl.CartServiceImpl;
 import com.itlike.service.impl.OrderServiceImpl;
+import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @WebServlet("/orderServlet")
@@ -59,12 +59,27 @@ public class OrderServlet extends BaseServlet {
     }
     /*后台管理系统获取所有的订单页*/
     public void orderAdminList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Map<String, String[]> parameterMap = request.getParameterMap();
+        QueryVo vo = new QueryVo();
         try {
-            List<Orders> orders=orderService.getAllOrders();
-            response.getWriter().print(JSON.toJSONString(orders));
+            BeanUtils.populate(vo,parameterMap);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        try {
+            PageListRes allOrders = orderService.getAllOrders(vo);
+            response.getWriter().print(JSON.toJSONString(allOrders));
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    /*删除订单*/
+    public String deleteOrder(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String uuid = request.getParameter("uuid");
+        orderService.deleteOrder(uuid);
+        return "/orderServlet?action=orderList";
     }
     /*提交订单*/
     public void submitOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

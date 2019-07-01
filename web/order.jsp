@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,33 +49,40 @@
             </tr>
             </thead>
             <c:forEach items="${order.orderItems }" var="orderItem" varStatus="status">
-            <tr>
-                <th><img src="/upload/image/${orderItem.product.image}" alt="" width="50px" height="50px"></th>
-                <th>
-                    <div>
-                        <a href="#" class="layui-a layui-a-normal">${orderItem.product.name}</a>
-                    </div>
-                </th>
-                <th>
-                    <span><del>￥${orderItem.product.marketPrice}</del></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1<br>
-                    <span style="color: red">￥${orderItem.product.shopPrice}</span>
-                </th>
-                <th><a href="">投诉店家</a><br><a href="">退运费险</a></th>
-                <c:if test="${status.index==0}">
-                    <th rowspan="${fn:length(order.orderItems)+1}"><span>${order.totalPrice}</span></th>
-                    <th rowspan="${fn:length(order.orderItems)+1}">
+                <tr>
+                    <th><img src="/upload/image/${orderItem.product.image}" alt="" width="50px" height="50px"></th>
+                    <th>
+                        <div>
+                            <a href="#" class="layui-a layui-a-normal">${orderItem.product.name}</a>
+                        </div>
+                    </th>
+                    <th>
+                        <span><del>￥${orderItem.product.marketPrice}</del></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${orderItem.count}<br>
+                        <span style="color: red">￥${orderItem.product.shopPrice}</span>
+                    </th>
+                    <th><a href="">投诉店家</a><br><a href="">退运费险</a></th>
+                    <c:if test="${status.index==0}">
+                        <th rowspan="${fn:length(order.orderItems)+1}"><span>${order.totalPrice}</span></th>
+                        <th rowspan="${fn:length(order.orderItems)+1}">
                         <span>
                             <a href="/orderServlet?action=updatePayState&orderId=${order.uuid}">
-                                <c:if test="${order.payState==false}">待付款</c:if>
-                                <c:if test="${order.payState==true&&order.sendState==false}">待发货</c:if>
-                                <c:if test="${order.payState==true&&order.sendState==true}">已发货</c:if>
+                                <c:if test="${!empty order.addr&&!empty order.phone&&!empty order.name}">
+                                    <c:if test="${order.payState==false}">待付款</c:if> 
+                                    <c:if test="${order.payState==true&&order.sendState==false}">待发货</c:if>
+                                    <c:if test="${order.payState==true&&order.sendState==true}">已发货</c:if>
+                                </c:if>
                             </a>
                         </span>
-                        <br>
-                        <span><a href="#" class="update" id="${order.uuid}">修改信息</a></span>
-                    </th>
-                </c:if>
-            </tr>
+                            <br>
+                            <c:if test="${!order.sendState==true}">
+                                <span><a href="#" class="update" id="${order.uuid}">修改信息</a></span>
+                            </c:if>
+                            <c:if test="${order.sendState==false}">
+                                <span><a href="/orderServlet?action=deleteOrder&uuid=${order.uuid}" class="delete">取消订单</a></span>
+                            </c:if>
+                        </th>
+                    </c:if>
+                </tr>
             </c:forEach>
             <tr>
                 <th colspan="2"><span>保险服务</span></th>
@@ -86,45 +93,46 @@
 </c:forEach>
 <%@include file="footer.jsp" %>
 <script>
-    layui.use(['form','layer'], function(){
+    layui.use(['form', 'layer'], function () {
         var form = layui.form;
         var $ = layui.jquery;
         var layer = layui.layer;
         var uuid;
         //表单初始赋值
         $(".update").click(function () {
-            uuid=$(this).attr("id");
+            uuid = $(this).attr("id");
             layer.open({
                 type: 2,
                 content: 'updateOrder.jsp', //这里content是一个普通的String
-                title:'修改收货信息',
-                area:'500px',
-                btn:'修改',
-                yes: function(){
+                title: '修改收货信息',
+                area: '500px',
+                btn: '修改',
+                yes: function () {
                     var pIframe = $('iframe')[0].contentWindow.document;
-                    var name=$(pIframe).find("#name").val();
-                    var addr=$(pIframe).find("#addr").val();
-                    var phone=$(pIframe).find("#phone").val();
-                    var uuid=$(pIframe).find("#uuid").val();
+                    var name = $(pIframe).find("#name").val();
+                    var addr = $(pIframe).find("#addr").val();
+                    var phone = $(pIframe).find("#phone").val();
+                    var uuid = $(pIframe).find("#uuid").val();
                     $.ajax({
-                        url:"orderServlet",
-                        data:{action:'updateMessage',uuid:uuid,name:name,addr:addr,phone:phone},
-                        success:function (data) {
+                        url: "orderServlet",
+                        data: {action: 'updateMessage', uuid: uuid, name: name, addr: addr, phone: phone},
+                        success: function (data) {
                             data = $.parseJSON(data);
-                            if (data.success){
+                            if (data.success) {
                                 layer.msg(data.msg);
                             }
+                            window.location.reload();
                         }
                     });
-                    console.log(name,addr,phone,uuid);
+                    console.log(name, addr, phone, uuid);
                     layer.closeAll();
                 },
-                success:function (index, layero) {
+                success: function (index, layero) {
                     var pIframe = $('iframe')[0].contentWindow.document;//找到上一级父页面
                     $.ajax({
-                        url:"orderServlet",
-                        data:{action:'getMessage',uuid:uuid},
-                        success:function (data) {
+                        url: "orderServlet",
+                        data: {action: 'getMessage', uuid: uuid},
+                        success: function (data) {
                             data = $.parseJSON(data);
                             console.log(data);
                             $(pIframe).find("#name").val(data.name);

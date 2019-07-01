@@ -44,17 +44,17 @@
             </tr>
             <tr>
                 <td>市场价格:</td>
-                <td><input type="text" id="marketPrice" name="marketPrice" class="easyui-validatebox" data-options="required:true"></td>
+                <td><input type="text" id="marketPrice" name="marketPrice" class="easyui-validatebox  easyui-numberbox" data-options="required:true,min:0,precision:2"></td>
                 <td>商店价格:</td>
-                <td><input type="text" id="shopPrice" name="shopPrice" class="easyui-validatebox" data-options="required:true"></td>
+                <td><input type="text" id="shopPrice" name="shopPrice" class="easyui-validatebox easyui-numberbox" data-options="required:true,min:0,precision:2"></td>
             </tr>
             <tr id="statebox">
                 <td>是否上架</td>
-                <td><input type="text" name="state" id="state" class="easyui-combobox" placeholder="是否上架"/></td>
+                <td><input type="text" name="state" id="state" class="easyui-combobox easyui-validatebox" placeholder="是否上架" data-options="required:true"/></td>
             </tr>
             <tr>
                 <td>所属分类</td>
-                <td><input type="text" name="scid" id="secondCategory" class="easyui-combobox" placeholder="所属分类"/></td>
+                <td><input type="text" name="scid" id="secondCategory" class="easyui-combobox easyui-validatebox" placeholder="所属分类" data-options="required:true"/></td>
             </tr>
             <tr>
                 <td>商品图片:</td>
